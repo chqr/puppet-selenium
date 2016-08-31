@@ -19,6 +19,7 @@
 # [*max_session*]      maximum amount of concurrent tests which can be run on this node
 # [*custom_arguments*] to be appended to the executable if unhandled by this module
 # [*capabilities*]     a list of selenium browser capabilities
+# [*timeout*]          Selenium grid timeout
 #
 # === Authors
 #
@@ -38,7 +39,8 @@ define selenium::server (
   $group             = $selenium::group,
   $max_session       = 5,
   $custom_arguments  = [],
-  $capabilities      = $selenium::capabilities
+  $capabilities      = $selenium::capabilities,
+  $timeout           = 30000,
 ) {
   if ! $selenium::standalone_server {
     fail('You must provide the selenium base class with a selenium standalone server jar file to run')
