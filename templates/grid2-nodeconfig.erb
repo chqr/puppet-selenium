@@ -2,7 +2,7 @@
   "capabilities": <%=@capabilities.to_json%>,
   "configuration": {
     "cleanUpCycle":2000,
-    "timeout":30000,
+    "timeout":<%=@timeout%>,
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
     "host": "<%=@host%>",
     "url": "http://<%=@host%>:<%=@port%>/wd/hub",
